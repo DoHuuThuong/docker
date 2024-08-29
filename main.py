@@ -37,8 +37,6 @@ if st.button("Run Code"):
             print(f"An error occurred: {e}")
         print(f"full_code: {full_code}")
         print(f"language: {language}")
-        output = ""  # Khởi tạo biến output với giá trị mặc định là chuỗi rỗng
-
         output = run_code_in_docker(full_code, language)
         if output.strip() == expected_output.strip():
             st.success(f"Test Passed: Input: {test_input}")
