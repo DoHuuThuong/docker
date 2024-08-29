@@ -30,14 +30,8 @@ if st.button("Run Code"):
         # Prepend the test input to the code if needed (e.g., input via arguments)
         full_code = content  # Modify this if test_input should be part of the code
         
-        # output = run_code_in_docker(full_code, language)
-        try:
-            output = run_code_in_docker(full_code, language)
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            print(f"full_code: {full_code}")
-            print(f"language: {language}")
         output = run_code_in_docker(full_code, language)
+        
         if output.strip() == expected_output.strip():
             st.success(f"Test Passed: Input: {test_input}")
             passed_tests += 1
